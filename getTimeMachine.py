@@ -3,6 +3,7 @@
 import subprocess
 import time
 import os
+from time import strftime, localtime
 
 ######################
 # USER SET VARIABLES #
@@ -35,6 +36,7 @@ WAIT_TIME = 600
 ########################################
 
 while True:
+    print strftime("%a, %d %b %H:%M", localtime())
     if os.path.ismount("/Volumes/piMount") and os.path.ismount("/Volumes/KyleBackup"):
         print "Your pi is mounted!"
     elif os.path.ismount("/Volumes/piMount") and (os.path.ismount("/Volumes/KyleBackup")==False):
