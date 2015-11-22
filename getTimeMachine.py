@@ -53,7 +53,7 @@ while True:
             if line != "":
                 #Look for "SSID" and make sure it isn't blank
                 if line.split()[0] == "SSID:" and line != "           SSID: ":
-                    SSID = line.split()[1]
+                    SSID = line.split(None,1)[1]
 
         #Check this matches the home SSID, if so mount the smb share and TimeMachine
         if SSID == HOME_SSID:
